@@ -6,7 +6,7 @@ migrations/
 *env/
 
 # Database Files
-db.*
+db*
 
 # test files
 test.*
