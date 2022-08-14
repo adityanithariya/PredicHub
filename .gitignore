@@ -1,6 +1,7 @@
 # Python Folders
 __pycache__/
 migrations/
+*.ipynb
 
 # venv
 *env/
