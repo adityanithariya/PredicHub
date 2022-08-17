@@ -1,4 +1,5 @@
 State = (
+(None, "- Select -"),
 ("AN", "Andaman and Nicobar Islands"),
 ("AP", "Andhra Pradesh"),
 ("AR", "Arunachal Pradesh"),
@@ -35,4 +36,27 @@ State = (
 ("UP", "Uttar Pradesh"),
 ("UT", "Uttarakhand"),
 ("WB", "West Bengal"),
+)
+
+Gender = (
+    (None, "- Select -"),
+    ("m", "Male"),
+    ("f", "Female"),
+    ("o", "Other")
+)
+
+Category1 = (
+    (None, "- Select -"),
+    ("Gen", "General"),
+    ("OBC", "Other Backward Classes"),
+    ("SC", "Scheduled Classes"),
+    ("ST", "Scheduled Tribes")
+)
+
+Category2 = (
+    (None, "- Select -"),
+    ("ExS", "Ex-Serviceman"),
+    ("PwD", "Pwd/Divayang"),
+    ("EWS", "EWS"),
+    ("Na", "None"),
 )
