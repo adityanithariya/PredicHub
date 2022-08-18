@@ -2,12 +2,16 @@
 __pycache__/
 migrations/
 *.ipynb
+uninstall.txt
 
 # venv
 *env/
 
 # Database Files
 db*
+
+# Media Files
+media/ 
 
 # test files
 test.*
