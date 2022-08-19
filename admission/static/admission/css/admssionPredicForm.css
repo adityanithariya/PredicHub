@@ -1,0 +1,103 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+body {
+    background-color: rgb(169, 214, 232);
+    min-height: 100vh;
+}
+
+.form {
+    width: 90vw;
+    height: 90vh;
+    margin: auto;
+    margin-top: 5vh;
+    background: white;
+    box-shadow: 0 0 25px #888888;
+    display: flex;
+    flex-direction: row;
+}
+
+.form-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    align-content: center;
+    background-color: white;
+    margin: 50px;
+    height: 71vh;
+    border-radius: 13px;
+}
+
+#form-head {
+    margin-bottom: 8px;
+    font-size: 28px;
+    margin-top: 21px;
+    margin-right: 27px;
+    padding-bottom: 25px;
+}
+
+.input-div {
+    width: 50%;
+    height: 100%;
+    background: white;
+    border-top-left-radius: 15px;
+}
+
+.form-inputs {
+    display: inline-block;
+    height: 0px;
+    width: 0px;
+
+}
+
+input {
+    background-color: rgb(232 232 232);
+    height: 20px;
+    width: 193px;
+    border-radius: 20px;
+    outline: none;
+    padding: 11px;
+    padding-left: 31px;
+    font-size: 15px;
+    border: 0.5px solid rgb(197 195 195);
+    margin: 5px;
+    align-items: center;
+}
+
+.button{
+    position: relative;
+    width: 108px;
+    margin: 20px;
+    height: 50px;
+    font-size: 20px;
+    background-color: rgb(57, 230, 57);
+    color: #fff;
+    border: none;
+    border-radius: 16px;
+    cursor: pointer;
+    transition: width 1s, border-radius 1s;
+}
+
+.button:focus{
+    width:30px ;
+    background-color: rgb(57, 230, 57);
+    border-radius: 50%;
+
+}
+.button:focus .text {
+    opacity: 0;
+
+}
+.button:focus .icon{
+    opacity: 1;
+    transition-delay: 1s;
+}
+img{
+    height: 100%;
+    max-width: 100vh;
+
+}
