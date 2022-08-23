@@ -1,105 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
-
+    {% load static %}
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign-in/Sign-up</title>
+    <link rel="stylesheet" href="{% static 'css/utility.css' %}">
     <link rel="stylesheet" href="{% static 'css/sign.css' %}">
     <link rel="icon" href="{% static 'images/favicon.png' %}">
 </head>
 
 <body>
-    <div class="container">
+    <div class="container {{mode}}">
         <div class="forms-container">
             <div class="signin-signup">
-                <form action="{% url 'sign-in' %}" class="sign-in-form" name="myForm" onsubmit="return validateForm()" method="post">
+                <form action="{% url 'sign-in' %}" class="sign-in-form" name="myForm" onsubmit="return validateForm()" method="POST">
                     {% csrf_token %}
                     <img src="{% static 'images/student-cap.png' %}" alt="" class="cap c1">
                     <h2 class="title">Sign In</h2>
                     <div class="input-field" id="name">
-                        <i class="fa-solid fa-user"></i>
-                        <input type="text" placeholder="fullname" required name="fname">
+                        <i class="fa-solid fa-envelope"></i>
+                        <input type="email" placeholder="Email" required name="email">
                         <b><span class="formerror"> </span></b>
                     </div>
                     <div class="input-field" id="pass">
                         <i class="fa-solid fa-lock"></i>
-                        <input type="password" placeholder="password" name="fpass" required>
+                        <input type="password" placeholder="Password" name="password" required>
                         <b><span class="formerror"></span></b>
                     </div>
                     <input type="submit" class="btn solid" value="login">
-                    <p class="social-text">Or Sign-In with social plateform</p>
-                    <div class="social-media">
-                        <a href="#" class="social-icon"><i class="fa-brands fa-facebook-f"></i></a>
-                        <a href="#" class="social-icon"><i class="fa-brands fa-twitter"></i></a>
-                        <a href="#" class="social-icon"><i class="fa-brands fa-google"></i></a>
-                        <a href="#" class="social-icon"><i class="fa-brands fa-linkedin-in"></i></a>
-                    </div>
+                    <p class="social-text">Or</p>
+                    <a href="#" class="google-icon"><img src="{% static 'images/google.svg' %}" alt="Google"> Signup with Google</a>
                 </form>
-                <form action="{% url 'sign-up' %}" class="sign-up-form" name="myForm" onsubmit="return validateForm()" method="post">
+                <form action="{% url 'sign-up' %}" class="sign-up-form" name="myForm" onsubmit="return validateForm()" method="POST">
                     {% csrf_token %}
                     <img src="{% static 'images/student-cap.png' %}" alt="" class="cap c2">
-                    <h2 class="title">Sign up</h2>
+                    <h2 class="title">Sign Up</h2>
                     <div class="input-field" id="name">
                         <i class="fa-solid fa-user"></i>
-                        <input type="text" placeholder="firstname" name="fname" required>
+                        <input type="text" placeholder="First Name" name="fname" required>
                         <b><span class="formerror"> </span></b>
                     </div>
                     <div class="input-field" id="name">
                         <i class="fa-solid fa-user"></i>
-                        <input type="text" placeholder="lastname" name="lname" required>
+                        <input type="text" placeholder="Last Name" name="lname" required>
                         <b><span class="formerror"> </span></b>
                     </div>    
                     <div class="input-field" id="email">
                         <i class="fa-solid fa-envelope"></i>
-                        <input type="email" placeholder="user-email" name="femail" required>
+                        <input type="email" placeholder="Email" name="email" required>
                         <b><span class="formerror"> </span></b>
                     </div>
                     <div class="input-field" id="pass">
                         <i class="fa-solid fa-lock"></i>
-                        <input type="password" placeholder="password" name="fpass" required>
+                        <input type="password" placeholder="Password" name="password" required>
                         <b><span class="formerror"> </span></b>
                     </div>
                     <input type="submit" class="btn solid" value="Sign-up">
-                    <p class="social-text">Or Sign-up with social plateform</p>
-                    <div class="social-media">
-                        <a href="#" class="social-icon"><i class="fa-brands fa-facebook-f"></i></a>
-                        <a href="#" class="social-icon"><i class="fa-brands fa-twitter"></i></a>
-                        <a href="#" class="social-icon"><i class="fa-brands fa-google"></i></a>
-                        <a href="#" class="social-icon"><i class="fa-brands fa-linkedin-in"></i></a>
-                    </div>
+                    <p class="social-text">Or</p>
+                    <a href="#" class="google-icon"><img src="{% static 'images/google.svg' %}" alt="Google"> Signup with Google</a>
                 </form>
-
             </div>
         </div>
         <div class="panels-container">
             <div class="panel left-panel">
                 <div class="content">
-                    <h3>New Here</h3>
+                    <h3>New Here?</h3>
 
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iusto, totam.</p>
+                    <p>Join us by a quick</p>
                     <button class="btn transparent" id="sign-up-button">sign up</button>
                 </div>
                 <img src="{% static 'images/log.svg' %}" alt="" class="image">
             </div>
             <div class="panel right-panel">
                 <div class="content">
-                    <h3>one of us</h3>
+                    <h3>One of us?</h3>
 
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Et, neque.</p>
+                    <p>Glad to see you here!</p>
                     <button class="btn transparent" id="sign-in-button">sign in</button>
                 </div>
                 <img src="{% static 'images/register.svg' %}" alt="" class="image">
             </div>
         </div>
     </div>
-
+    <div id="message-div" class="align-center">
+        {% for message in messages %}
+        {% if message %}
+        <div class="messages align-center {{message.tags}}">
+            <span class="message">
+                {{ message }}
+            </span>
+            <span class="cross-icon">✕</sn>
+        </div>
+        {% endif %}
+        {% endfor %}
     </div>
-
-
-
-    <script src="sign.js"></script>
+    <script src="{% static 'js/sign.js' %}"></script>
     <script src="https://kit.fontawesome.com/62b30a2462.js" crossorigin="anonymous"></script>
 </body>
 
