@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect, get_object_or_404
-from .forms import StudentRegistration
+from .forms import CollegeRegistration, StudentRegistration
 from .models import Student
 
 # Views
@@ -21,7 +21,7 @@ def admPredicForm(request):
             form = StudentRegistration(request.POST)
         else:
             print("form invalid")
-            form = StudentRegistration()
+            form = StudentRegistration(request.POST)
     else:
         form = StudentRegistration()
     
@@ -29,3 +29,20 @@ def admPredicForm(request):
         "form": form,
     }
     return render(request, "admission/admissionPredicForm.html", context=context)
+
+def collegeRegistration(request):
+    if request.method == "POST":
+        form = CollegeRegistration(request.POST or None)
+        if form.is_valid():
+            form = form.save(commit=False)
+            form.user = request.user
+            form.save()
+            form = CollegeRegistration(request.POST or None)
+        else:
+            form = CollegeRegistration(request.POST)
+    else:
+        form = CollegeRegistration()
+    context = {
+        "form": form,
+    }
+    return render(request, "admission/collegeRegistration.html", context=context)

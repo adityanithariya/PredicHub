@@ -1,4 +1,3 @@
-from email.policy import default
 from django.db import models
 from django.contrib.auth.models import User
 
@@ -14,6 +13,9 @@ Category2.insert(0, (None, "Select Category"))
 # Utility Functions
 def studentProfilePath(instance, filename):
     return f"admission/student/{instance.user.username}/{filename}"
+
+def collegeProfilePath(instance, filename):
+    return f"admission/college/{instance.user.username}/{filename}"
 
 # Models
 class Student(models.Model):
@@ -41,3 +43,11 @@ class Student(models.Model):
     def __str__(self):
         return f"{self.user.first_name} {self.user.last_name} - {self.user.username}"
 
+class College(models.Model):
+    user = models.OneToOneField(User, on_delete=models.SET_NULL, null=True)
+    profile_image = models.ImageField(default=None, upload_to=collegeProfilePath)
+    name = models.CharField(max_length=200)
+    address = models.CharField(max_length=1000)
+    phone_number = models.CharField(max_length=10)
+    email = models.EmailField()
+    website = models.URLField()

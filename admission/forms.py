@@ -1,6 +1,5 @@
 from django.forms import ModelForm
-from django.contrib.auth.models import User, AbstractBaseUser
-from .models import Student
+from .models import College, Student
 
 class StudentRegistration(ModelForm):
     class Meta:
@@ -17,3 +16,16 @@ class StudentRegistration(ModelForm):
     def __init__(self, *args, **kwargs):
         super(StudentRegistration, self).__init__(*args, **kwargs)
         self.fields['JEEScore'].required = False
+
+class CollegeRegistration(ModelForm):
+    class Meta:
+        model = College
+
+        fields = [
+            "profile_image",
+            "name",
+            "address",
+            "phone_number",
+            "email",
+            "website"
+        ]
