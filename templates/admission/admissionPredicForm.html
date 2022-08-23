@@ -11,31 +11,26 @@
 </head>
 <body>
     
-  <div class="form">
-    <div class="input-div">
-      <img src="/image1.jpg" alt="error">
-
+  <div class="form-div">
+    <div class="input-div align-center">
+      <img src="{% static 'admission/images/rg-image.jpg' %}" alt="error">
     </div>
-
     <div class="input-div">
-
-      <form action="/" class="form-box">
+      <form class="form-box align-center" method="POST" enctype="multipart/form-data" onsubmit="return executeAnimation();">
+        {% csrf_token %}
         <div id="form-head">
-          Registration form
+          Prediction Form
         </div>
-        <div><input type="text" name="name" placeholder="enter yor name " id="name" class="form-input"></div>
-        <div><input type="text" name="name" placeholder="enter yor name " id="name" class="form-input"></div>
-        <div><input type="text" name="name" placeholder="enter yor name " id="name" class="form-input"></div>
-        <div><input type="text" name="name" placeholder="enter yor name " id="name" class="form-input"></div>
-        <div><input type="text" name="name" placeholder="enter yor name " id="name" class="form-input"></div>
-        <div><input type="text" name="name" placeholder="enter yor name " id="name" class="form-input"></div>
-        <button class="button">
-          <span class="text">Submit</span>
-          <i class="ri-check-line icon"></i>
+        <div>
+          {{form.as_p}}
+        </div>
+        <button class="button" id="submit-btn">
+            Submit
         </button>
       </form>
     </div>
   </div>
     <script src="{% static 'admission/js/admssionPredicForm.js' %}"></script>
+    <script src="{% static 'js/lord-icon.js' %}"></script>
 </body>
 </html>
