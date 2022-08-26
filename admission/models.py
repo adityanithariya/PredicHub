@@ -15,6 +15,9 @@ Category2.insert(0, (None, "Select Category"))
 def studentProfilePath(instance, filename):
     return f"admission/student/{instance.user.username}/{filename}"
 
+def collegeProfilePath(instance, filename):
+    return f"admission/student/{instance.user.username}/{filename}"
+
 # Models
 class Student(models.Model):
     user = models.OneToOneField(User, on_delete=models.SET_NULL, null=True)

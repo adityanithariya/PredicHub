@@ -1,5 +1,4 @@
 from django.forms import ModelForm
-from django.contrib.auth.models import User, AbstractBaseUser
 from .models import Student
 
 class StudentRegistration(ModelForm):
