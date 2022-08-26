@@ -14,6 +14,8 @@ Category2.insert(0, (None, "Select Category"))
 # Utility Functions
 def studentProfilePath(instance, filename):
     return f"admission/student/{instance.user.username}/{filename}"
+def collegeProfilePath(instance, filename):
+    return f"admission/college/{instance.user.username}/{filename}"
 
 def collegeProfilePath(instance, filename):
     return f"admission/student/{instance.user.username}/{filename}"
