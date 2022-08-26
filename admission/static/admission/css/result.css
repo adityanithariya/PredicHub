@@ -1,0 +1,228 @@
+body {
+    background-color: aliceblue;
+}
+
+.align-center {
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+}
+
+header {
+    position: relative;
+    width: 90%;
+    padding: 28px 3%;
+    margin: auto;
+    justify-content: space-between !important;
+    background-color: white;
+    border-radius: 20px;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    transition: top .5s;
+    animation: spaceship 1s infinite;
+    /* box-shadow: 0 0 4px 0 #00000070; */
+}
+
+/* @keyframes spaceship {
+    0%   {top: 0px;}
+    50%  {top: 5px;}
+    100% {top: 0px;}
+  } */
+
+#header-main {
+    font-weight: 700;
+    text-decoration: none;
+    font-size: 2em;
+    letter-spacing: 2px;
+}
+
+.nav-item {
+    position: relative;
+    margin: 0 15px;
+    text-decoration: none;
+    Letter-spacing: 2px;
+    font-weight: 500px;
+}
+.nav-item a{
+    text-decoration: none !important;
+}
+
+.nav-item:hover{
+    background-color: aliceblue;
+    border-left: #111;
+    border-right: #111;
+    padding: -15px;
+    
+}
+
+.greetings {
+    background-color: #fff;
+    margin: 10px auto;
+    width: 50%;
+    padding: 25px 30px;
+    margin-top: 30px;
+    text-align: center;
+    border-radius: 40px;
+}
+
+.greetings-txt {
+    font-size: 1.5rem;
+    margin-bottom: 0px;
+}
+
+/* box */
+/* .main {
+    display: flex;
+    flex-direction: row;
+    border-radius: 10px;
+    background-color: #ffffff;
+   
+    position: relative;
+    box-shadow: 0 27px 20px -19px rgb(122 62 134 / 31%);
+    height: 320px;
+    margin-left: 111px;
+    margin-right: 111px;
+    margin-top: 40px;
+} */
+
+/* img{
+    
+    height: 270px ;
+    width: 27%;
+    padding-top: 10px;
+
+} */
+.main{
+    background-color: #FFF;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    justify-content: center;
+    align-items: center;
+    width: 1000px;
+    height: 240px;
+    margin: 20px auto;
+    border-radius: 20px;
+    color: #112A46;
+    
+     /* color: black; */
+}
+
+#content{
+    font-family: sans-serif;
+    line-height: 1;
+    margin-bottom: 100px;
+
+}
+h2{
+    /* text-align: center; */
+    margin-left: 100px;
+    font-size: 2rem;
+    /* text-shadow: 2px 2px 2px 2px #1B4902; */
+}
+img{
+    height: 300px;
+    width: 200px;
+}
+#image{
+    margin: 0 auto;
+}
+p{
+    line-height: 1.5;
+}
+/* footer */
+button{
+    /* margin: 10px auto; */
+    /* position: relative; */
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    width: 150px;
+    height: 42px;
+    background-color: #a9c7e9 ;
+    /* background-color:#acacac ; */
+    color: #fff;
+    /* color: #112A46; */
+    padding: 5px 10px;
+    font-size: 1rem;
+    border-radius: 10px;
+    font-family: serif;
+}
+button:hover{
+    background-color: hsl(184, 73%, 67%);
+    color: #fff;
+    box-shadow: 0px 4px 14px 0 #6de0e8b3;
+}
+
+footer {
+    background: #111;
+    margin-top: 100px;
+    height: auto;
+    width: 100vw;
+    font-family: "Open Sans";
+    padding-top: 40p ² column;
+    color: #fff;
+    padding-top: 20px;
+    ;
+}
+
+.footer-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+footer-content h3 {
+    font-size: 1.8em;
+    font-weight: 400;
+    text-transform: capitalise;
+    line-height: 3rem;
+}
+
+.footer-content p {
+    max-width: 500px;
+    margin: 10px auto;
+    line-height: 28px;
+    font-size: 14px;
+}
+
+.socials {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1rem 0 3rem 0;
+
+}
+
+.socials li {
+    margin: 0 10px;
+}
+
+.socials a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.socials a i {
+    font-size: 1.1rem;
+    transition: color .4s ease;
+}
+
+.socials a:hover i {
+    color: aqua;
+}
+
+.clg-name{
+    margin-top: 20px;
+    margin-right: 10px;
+    font-size: 25px;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+#heading{
+    margin-top: 20px;
+}

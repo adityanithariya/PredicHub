@@ -25,6 +25,7 @@ def admPredicForm(request):
             form.save()
             print("form saved")
             form = StudentRegistration(request.POST)
+            return redirect('result')
         else:
             print("form invalid")
             form = StudentRegistration()
@@ -61,6 +62,8 @@ def signup(request):
         user.first_name = fname
         user.last_name = lname
         user.save()
+
+        messages.success(request, "Login to continue!")
         return redirect('admRegister', mode="sign-in")
 
     else:
@@ -74,7 +77,10 @@ def signin(request):
         user = authenticate(request, username=email.split('@')[0], password=password)
         if user != None:
             login(request, user)
-            return redirect('index')
+            return redirect('admPredicForm')
 
     else:
         return HttpResponse("404 - Not Found")
+
+def result(request):
+    return render(request, "admission/result.html")
