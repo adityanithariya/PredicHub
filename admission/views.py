@@ -29,3 +29,6 @@ def admPredicForm(request):
         "form": form,
     }
     return render(request, "admission/admissionPredicForm.html", context=context)
+
+def home(request):
+    return render(request, "admission/home.html")
